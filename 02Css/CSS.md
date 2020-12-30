@@ -537,8 +537,7 @@ CSS 中的z-index属性控制重叠元素的垂直叠加顺序，默认元素的
 
   盒模型由content（内容）、padding（内边距）、border（边框）、margin（外边距）组成。
 
-
-<img src="/Users/panzhenzhen/Desktop/截屏2020-12-30 下午10.48.03.png" alt="截屏2020-12-30 下午10.48.03" style="zoom:30%;" />
+<img src="/Users/panzhenzhen/Desktop/content-box.png" alt="content-box" style="zoom:50%;" />
 
 ## 22. 标准盒模型和怪异盒模型有什么区别？✨
 
@@ -548,7 +547,7 @@ CSS 中的z-index属性控制重叠元素的垂直叠加顺序，默认元素的
 
 元素的宽度 = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right
 
-<img src="/Users/panzhenzhen/Desktop/截屏2020-12-30 下午10.52.51.png" alt="截屏2020-12-30 下午10.52.51" style="zoom:40%;" />
+<img src="/Users/panzhenzhen/Desktop/截屏2020-12-31 上午12.26.47.png" alt="截屏2020-12-31 上午12.26.47" style="zoom:50%;" />
 
 而IE怪异盒模型（IE8以下）width的宽度并不是content的宽度，而是border-left + padding-left + content的宽度值 + padding-right + border-right之和，height同理。
 
