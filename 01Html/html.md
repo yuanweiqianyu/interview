@@ -229,7 +229,7 @@ createTextNode() //创建一个文本节点
 > 以下这段css为例
 `mod-nav h3 span {font-size: 16px;}`
  我们对应的DOM Tree 如下
- <img src="/Users/panzhenzhen/Desktop/截屏2020-12-30 下午11.18.39.png" alt="截屏2020-12-30 下午11.18.39" style="zoom:50%;" />
+ <img src="https://github.com/yuanweiqianyu/interview/blob/master/01Html/img/css-selector.png" style="zoom:50%;" />
  > - 若从左向右的匹配，过程是：
     1. 从 .mod-nav 开始，遍历子节点 header 和子节点 div
     2. 然后各自向子节点遍历。在右侧      div 的分支中
