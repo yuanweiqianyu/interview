@@ -1,0 +1,60 @@
+.sup{
+    /*
+    box-shadow
+    以左上角为原点
+     x向右偏移量 | y向下偏移量 | 毛玻璃指数 | 晕染效果（宽高扩大多少 | 颜色
+    offset-x | offset-y | blur-radius | spread-radius | color
+    */
+    box-shadow: 20px 20px 10px 10px red ;
+    border: gainsboro 10px solid;
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+border-image
+-webkit-border-image
+需要配合boder使用，多用于按钮的边框
+
+菜鸟教程翻译
+     图片来源（地址）   /     图片向内偏移     /   图片边框的宽度     / 指定边框外部绘制的部位的量 / repeat（重复）、stretch（拉伸）、round（铺满）
+border-image-source / border-image-slice / border-image-width/ border-image-outset/ border-image-repeat
+
+暂时理解的使用方法：
+border 内的值，对应边框的划分比例，边框会按照（source和repeat中间的）四个值来划分比例，顺序分别为上右下左，比例划分完成，border内会取这些划分好的图片块，
+但是，这四个值一定是上下加起来，或者左右加起来有空隙1以上，这个空间，就被元素内部无限复制满整个元素。
+（os：特别像iOS的图片边角拉伸。感觉道理一样，一些教程的解释完全看懵）
+*/
+.img1{
+    border-left: yellow 80px solid;
+    border-right: yellow 30px solid;
+    -webkit-border-image: url("../img/123.jpg") 0 200 0 599  stretch;
+}
+
+.img2 {
+    border-right: yellow 50px solid;
+    border-left: yellow 50px solid;
+    -webkit-border-image: url("../img/321.png") 0 249 0 249 round;
+}
+
+.img3 {
+    border-right: yellow 37px solid;
+    border-left: yellow 37px solid;
+    -webkit-border-image: url("../img/111.jpg") 0 249 0 249  round;
+}
+
+.img4 {
+    -webkit-border-image: url("../img/button.png") 0 14 0 14   round;
+}
+
+.img5{
+    border-top: yellow 43px solid;
+    border-bottom: yellow 20px solid;
+    -webkit-border-image: url("../img/123.jpg") 434 0 200 0  stretch;
+    /*border-left: yellow 80px solid;*/
+    /*border-right: yellow 30px solid;*/
+    /*-webkit-border-image: url("../img/123.jpg") 434 200 200 599  stretch;*/
+}

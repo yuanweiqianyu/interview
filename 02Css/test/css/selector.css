@@ -1,0 +1,50 @@
+/*通配符选择器*/
+* {
+    margin: 10px;
+}
+
+/*标签*/
+div {
+    background: #1fb4ef;
+    border: #116688 solid 1px;
+    font-size: 15px;
+}
+
+/*id选择器*/
+#equir {
+    content: '唯一有id的人';
+}
+
+/*class*/
+/*相邻*/
+.sup + .neighbor {
+    color: green;
+}
+
+/*子选择器*/
+.sup > div {
+    padding: 50px;
+    border: lightpink dashed 1px;
+}
+
+/*后代选择器*/
+.sup div {
+    color: peru;
+}
+
+/*兄弟选择器/匹配选择器*/
+.son ~ div {
+    font-size: 30px;
+}
+
+/*属性选择器*/
+.son[data-hah='haha']{
+    border-bottom: aqua double 20px;
+}
+/*伪类选择器*/
+#equir:hover{
+    background: blue;
+}
+
+
+

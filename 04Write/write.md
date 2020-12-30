@@ -282,7 +282,7 @@ num(2,5)
 
 难度：****
 * [「中高级前端面试」JavaScript手写代码无敌秘籍](https://juejin.cn/post/6844903809206976520#heading-14)
-
+* [一道面试题引起的思考](https://juejin.cn/post/6844903719792803847)
 
 
 
