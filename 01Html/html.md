@@ -14,7 +14,7 @@
 
 ## 2. Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?
 
-* **<!DOCTYPE>** 是文档类型的简写，声明文档类型和DTD规范的，主要就是告知浏览器以何种模式来解析并渲染文档，不同的渲染模式会影响到浏览器对于 CSS 代码甚至 JavaScript 脚本的解析。 声明位于文档中的最前面，处于 `<html>` 标签之前。
+* **<!DOCTYPE>** 是文档类型的简写，声明文档类型和DTD规范的，主要就是告知浏览器以何种模式来解析并渲染文档，不同的渲染模式会影响到浏览器对于 CSS 代码甚至 JavaScript 脚本的解析。 声明位于文档中的最前面，处于 html 标签之前。
 
 * 严格模式与混杂模式如何区分？
   * CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面；严格模式的排版和 JS 运作模式是 以该浏览器支持的最高标准运行。
@@ -45,9 +45,9 @@
 
 ## 5. DOM操作——怎样添加、移除、移动、复制、创建和查找节点。
 1. 创建新节点
-   createDocumentFragment() //创建一个DOM片段
-   createElement() //创建一个具体的元素
-   createTextNode() //创建一个文本节点
+- createDocumentFragment() //创建一个DOM片段
+- createElement() //创建一个具体的元素
+- createTextNode() //创建一个文本节点
 
 2. 添加、移除、替换、插入
 - appendChild()
@@ -192,14 +192,15 @@
 * 解决方法简单的出奇，只要在`<head>`之间加入一个`<link>`或者`<script>`元素就可以了。
 
 ## 16. 列举IE 与其他浏览器不一样的特性？
+（样式：透明度、内容、边框；事件。）
 1. IE支持currentStyle，FIrefox使用getComputStyle
 2. IE  使用innerText，Firefox使用textContent
 3. 滤镜方面：IE:filter:alpha(opacity= num)；Firefox：-moz-opacity:num
-4. 事件方面：IE：attachEvent：火狐是addEventListener
-5. 鼠标位置：IE是event.clientX；火狐是event.pageX
-6. IE使用event.srcElement；Firefox使用event.target
-7. IE中消除list的原点仅需margin:0即可达到最终效果；FIrefox需要设置margin:0;padding:0以及list-style:none
-8.  CSS圆角：ie7以下不支持圆角
+4. IE中消除list的原点仅需margin:0即可达到最终效果；FIrefox需要设置margin:0;padding:0以及list-style:none
+5. CSS圆角：ie7以下不支持圆角
+6. 事件方面：IE：attachEvent：火狐是addEventListener
+7. 鼠标位置：IE是event.clientX；火狐是event.pageX
+8. IE使用event.srcElement；Firefox使用event.target
 
 ## 17. 一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？
 分为4个步骤：
@@ -307,8 +308,10 @@ IE6 两个并发，iE7升级之后的6个并发，之后版本也是6个; Firefo
 ## 22. 事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？
 1. **事件**：我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript 侦测到的行为。
 2. **事件处理机制**：IE是事件冒泡、firefox同时支持两种事件模型，也就是：捕获型事件和冒泡型事件。；
+    * 事件监听：IE：attachEvent：火狐是addEventListener
     * 取消冒泡：`ev.stopPropagation()`;注意旧ie的方法`ev.cancelBubble = true`;
     * 取消默认行为：w3c的方法是e.preventDefault()，IE则是使用`e.returnValue = false;`
+    
 
 ## 23. 常见的浏览器内核有哪些？
 - 常见的浏览器内核：
