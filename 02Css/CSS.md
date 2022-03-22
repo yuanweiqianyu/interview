@@ -100,15 +100,19 @@
 
 * CSS3新增伪类举例：
 
-    p:first-of-type选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
+    p:first-of-type : 一组兄弟元素中其类型的第一个元素。
 
-    p:last-of-type 选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
+    p:last-of-type : p的父元素 的所有子元素中的最后一个选定元素，也包括子元素的最后一个子元素并以此类推。
 
-    p:only-of-type 选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
+    p:only-of-type : p内，任意一个元素，这个元素没有其他相同类型的兄弟元素。也包括子元素的子元素，所有后代。
 
-    p:only-child 选择属于其父元素的唯一子元素的每个 <p> 元素。
+    p:only-child ：p内，（每个子层级） 匹配没有任何兄弟元素的元素。
 
-    p:nth-child(2) 选择属于其父元素的第二个子元素的每个 <p> 元素。
+    p:nth-child(2) 选择所有兄弟元素的第二个子元素，并且是 <p>类型的 元素。
+
+        ？:nth-child(an+b) 首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从1开始排序，选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合（n=0，1，2，3...），合集中为？类型的元素
+
+        ？：nth-of-type(n)  具有一组兄弟节点的标签, 用 n 来筛选出在一组兄弟节点的位置。并且类型为？。
 
     :enabled :disabled控制表单控件的禁用状态。
 
@@ -124,13 +128,13 @@
 
 1. 线性渐变（gradient），
 
-2. transition
+2. 旋转（transform），transform:rotate(9deg)     scale(0.85,0.90)translate(0px,-30px)skew(-9deg,0deg);//旋转,缩放,定位,倾斜
 
-3. 旋转（transform），transform:rotate(9deg)     scale(0.85,0.90)translate(0px,-30px)skew(-9deg,0deg);//旋转,缩放,定位,倾斜
+3.  transition 过渡效果
 
 4. Animation 属性可以像Flash制作动画一样，通过控制关键帧来控制动画的每一步，实现更为复杂的动画效果。
 
-5. 增加了更多的CSS选择器     多背景 rgba
+5. 增加了更多的CSS选择器     多背景颜色定义方式 rgba
 
 6. 在CSS3中唯一引入的伪元素是::selection.
 
@@ -172,9 +176,9 @@
 
 参考 2：[《CSS3 渐变（Gradients）》](http://www.runoob.com/css3/css3-gradients.html)
 
-参考 3：[《CSS3 transition 属性》](http://www.runoob.com/cssref/css3-pr-transition.html)
+参考 3：[《CSS3 transform 属性》](http://www.runoob.com/cssref/css3-pr-transform.html)
 
-参考 4：[《CSS3 transform 属性》](http://www.runoob.com/cssref/css3-pr-transform.html)
+参考 4：[《CSS3 transition 属性》](http://www.runoob.com/cssref/css3-pr-transition.html)
 
 参考 5：[《CSS3 animation（动画） 属性》](http://www.runoob.com/cssref/css3-pr-animation.html)
 
@@ -569,9 +573,10 @@ See the Pen [LKpyzz](https://codepen.io/xiaomuzhu/pen/LKpyzz/) by Iwobi ([@xiaom
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-拓展阅读：[深入理解盒模型](https://www.cnblogs.com/xiaohuochai/p/5202597.html)
+拓展阅读：
+* [深入理解盒模型](https://www.cnblogs.com/xiaohuochai/p/5202597.html)
 
- 
+* [盒模型](https://segmentfault.com/a/1190000014801021)
 
 ## 23. 获取盒子宽高的几种方式及区别
 
@@ -683,24 +688,19 @@ https://www.jianshu.com/p/d183265a8dad
 
 [深入理解CSS过渡transition](https://www.cnblogs.com/xiaohuochai/p/5347930.html)
 
- 
-
-参考资料：
-
-1. [盒模型](https://segmentfault.com/a/1190000014801021)
-
 
 ## 29. 行内元素和块级元素
 
-* 行内元素：宽度和高度由内容决定，与其他元素共占一行的元素，我们将其叫行内元素。例如：<span>、<i>、<a> 等……
+* 行内元素：宽度和高度由内容决定，与其他元素共占一行的元素，我们将其叫行内元素。例如：`<span>、<i>、<a>` 等……
 
-* 块级元素：默认宽度由父容器决定，默认高度由内容决定，独占一行并且可以设置宽高的元素，我们将其叫做块级元素。例如：<p>、<div>、<ul> 等……
+* 块级元素：默认宽度由父容器决定，默认高度由内容决定，独占一行并且可以设置宽高的元素，我们将其叫做块级元素。例如：`<p>、<div>、<ul>` 等……
 
 * 在日常开发中，我们经常使用 CSS 的 display 属性来打破两者的壁垒：display: inline-block，使它们拥有更多的状态。
 
 ## 30. 让页面里的字体变清晰，变细用CSS怎么做
 
-* -webkit-font-smoothing在window系统下没有起作用，但是在IOS设备上起作用-webkit-font-smoothing：antialiased是最佳的，灰度平滑
+* -webkit-font-smoothing在window系统下没有起作用，但是在IOS设备上起作用
+* -webkit-font-smoothing：antialiased是最佳的，灰度平滑
 
 ## 31. display有哪些值？说明他们的作用?
 
@@ -731,15 +731,18 @@ https://www.jianshu.com/p/d183265a8dad
 
 * calc函数是css3新增的功能，可以使用calc()计算border、margin、pading、font-size和width等属性设置动态值。
 
+    > 示例：比父元素宽高小20px，并且居中
   ```css
   #div1 {
-     position: absolute;
-     left: 50px;
-     width: calc( 100% / (100px * 2) );
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: calc( 100% - ( 10px * 2 ) );
+    height: calc( 100% - ( 10px * 2 ) );
+    border: 1px solid #000000;
      //兼容写法
-     width: -moz-calc( 100% / (100px * 2) );
-     width: -webkit-calc( 100% / (100px * 2) );
-     border: 1px solid black;
+     width: calc( 100% - ( 10px * 2 ) );
+     width: calc( 100% - ( 10px * 2 ) );
    }
   ```
 
